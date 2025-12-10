@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NJLarks Web Design - We build your website before you pay a penny. Risk-free web design for local businesses.">
+    <title>NJLarks | Speculative Web Design</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a', // Deep Navy
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b', // Official Gold
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities */
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-gray-50 antialiased selection:bg-gold-500 selection:text-white">
+
+    <nav class="bg-navy-900 text-white fixed w-full z-50 shadow-lg border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold tracking-tight text-white">
+                        NJ<span class="text-gold-500">Larks</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#process" class="hover:text-gold-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">How It Works</a>
+                        <a href="#pricing" class="hover:text-gold-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
+                        <a href="#portfolio" class="hover:text-gold-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Recent Work</a>
+                        <a href="#contact" class="bg-gold-500 hover:bg-gold-600 text-white px-5 py-2 rounded-full text-sm font-bold transition-all shadow-md">Get Started</a>
+                    </div>
+                </div>
+
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden md:hidden bg-navy-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#process" onclick="toggleMenu()" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">How It Works</a>
+                <a href="#pricing" onclick="toggleMenu()" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+                <a href="#portfolio" onclick="toggleMenu()" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Recent Work</a>
+                <a href="#contact" onclick="toggleMenu()" class="text-gold-500 block px-3 py-2 rounded-md text-base font-bold">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative bg-navy-900 h-screen min-h-[600px] flex items-center justify-center text-center px-4">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Office Workspace" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-b from-navy-900/90 to-navy-900/95"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto space-y-8">
+            <div class="inline-block px-4 py-1 rounded-full border border-gold-500/50 bg-gold-500/10 text-gold-400 text-sm font-semibold tracking-wide uppercase mb-2">
+                Risk-Free Web Design
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight">
+                We Build Your Website <br>
+                <span class="text-gold-500">Before You Spend a Penny.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Specialists in high-speed, high-quality websites for local businesses. 
+                No imagination required—view your custom demo on your phone today.
+            </p>
+            <div class="pt-4">
+                <a href="#portfolio" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 gold-gradient rounded-full shadow-lg hover:shadow-gold-500/30 hover:-translate-y-1">
+                    View Our Work
+                    <i class="fa-solid fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="process" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-gold-600 font-semibold tracking-wide uppercase">The Process</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-navy-900 sm:text-4xl">
+                    Simple. Transparent. Risk-Free.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div class="relative p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-navy-900 rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-white">
+                        1
+                    </div>
+                    <div class="mt-4 text-gold-500 text-4xl mb-4">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">We Build The Demo</h3>
+                    <p class="text-gray-600">
+                        We create a fully functional version of your website tailored to your business brand and needs.
+                    </p>
+                </div>
+
+                <div class="relative p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-navy-900 rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-white">
+                        2
+                    </div>
+                    <div class="mt-4 text-gold-500 text-4xl mb-4">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">You Test It</h3>
+                    <p class="text-gray-600">
+                        We send you a private link. Open it on your phone, click the buttons, and see it in action.
+                    </p>
+                </div>
+
+                <div class="relative p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-navy-900 rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-white">
+                        3
+                    </div>
+                    <div class="mt-4 text-gold-500 text-4xl mb-4">
+                        <i class="fa-solid fa-handshake-simple"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Decide With Confidence</h3>
+                    <p class="text-gray-600">
+                        If you love it, you buy it. If it’s not for you, no hard feelings and you don't pay a penny.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 bg-navy-900 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-gold-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-gold-500 font-semibold tracking-wide uppercase">Investment</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+                    Transparent Pricing
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-400 mx-auto">
+                    Everything you need to get online and stay online.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-2xl transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-navy-900">The Build</h3>
+                        <p class="mt-4 text-gray-500">Design, development, and launch.</p>
+                        <p class="mt-8">
+                            <span class="text-5xl font-extrabold text-navy-900">£299</span>
+                            <span class="text-base font-medium text-gray-500">/one-off</span>
+                        </p>
+                        <ul class="mt-8 space-y-4">
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-gold-500 mr-3"></i>
+                                <span class="text-gray-600">Custom Design & Setup</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-gold-500 mr-3"></i>
+                                <span class="text-gray-600">Mobile Responsive</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-gold-500 mr-3"></i>
+                                <span class="text-gray-600">Domain Registration (.co.uk)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-gold-500 mr-3"></i>
+                                <span class="text-gray-600">SEO Essentials</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 px-8 py-4">
+                        <a href="#contact" class="block w-full bg-navy-900 text-white text-center font-bold py-3 rounded-lg hover:bg-navy-800 transition-colors">Start My Build</a>
+                    </div>
+                </div>
+
+                <div class="bg-navy-800 rounded-2xl overflow-hidden shadow-2xl border-2 border-gold-500 relative transform scale-105 z-10">
+                    <div class="absolute top-0 right-0 bg-gold-500 text-white text-xs font-bold px-3 py-1 uppercase tracking-wide rounded-bl-lg">Essential</div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-white">Hosting & Security</h3>
+                        <p class="mt-4 text-gray-300">Keeping your site live and safe.</p>
+                        <p class="mt-8">
+                            <span class="text-5xl font-extrabold text-white">£5</span>
+                            <span class="text-base font-medium text-gray-300">/month</span>
+                        </p>
+                        <ul class="mt-8 space-y-4">
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-gold-400 mr-3"></i>
+                                <span class="text-gray-300">High-Speed Hosting</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-gold-400 mr-3"></i>
+                                <span class="text-gray-300">SSL Security Certificate</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-gold-400 mr-3"></i>
+                                <span class="text-gray-300">99.9% Uptime</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-gold-400 mr-3"></i>
+                                <span class="text-gray-300">Cancel Anytime</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-navy-900 px-8 py-4">
+                        <p class="text-center text-gold-400 text-sm font-medium">Included with every build</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-2xl transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-navy-900">Updates</h3>
+                        <p class="mt-4 text-gray-500">Menu changes, price updates, etc.</p>
+                        <p class="mt-8">
+                            <span class="text-5xl font-extrabold text-navy-900">£60</span>
+                            <span class="text-base font-medium text-gray-500">/hour</span>
+                        </p>
+                        <ul class="mt-8 space-y-4">
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-gold-500 mr-3"></i>
+                                <span class="text-gray-600">Billed in 30-min increments</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-gold-500 mr-3"></i>
+                                <span class="text-gray-600">Minimum charge £30</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-gold-500 mr-3"></i>
+                                <span class="text-gray-600">Fast Turnaround</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-gold-500 mr-3"></i>
+                                <span class="text-gray-600">No Monthly Contracts</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 px-8 py-4">
+                         <p class="text-center text-gray-500 text-sm">Pay only when you need us</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-gold-600 font-semibold tracking-wide uppercase">Portfolio</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-navy-900 sm:text-4xl">
+                    Recent Builds
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Check out some of our recent live projects for local businesses.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-navy-900/10 group-hover:bg-transparent transition-all z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Pizzaometry" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-semibold text-gold-600 bg-gold-100 px-2 py-1 rounded">Takeaway</span>
+                            <i class="fa-solid fa-pizza-slice text-gray-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-4">Pizzaometry</h3>
+                        <a href="https://pizzaometry.netlify.app" target="_blank" class="inline-flex items-center text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors">
+                            Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-navy-900/10 group-hover:bg-transparent transition-all z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="The Crown" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-semibold text-gold-600 bg-gold-100 px-2 py-1 rounded">Pub & Bar</span>
+                            <i class="fa-solid fa-beer-mug-empty text-gray-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-4">The Crown Uxbridge</h3>
+                        <a href="https://the-crown-uxbridge.netlify.app" target="_blank" class="inline-flex items-center text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors">
+                            Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-navy-900/10 group-hover:bg-transparent transition-all z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fish and Chips" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-semibold text-gold-600 bg-gold-100 px-2 py-1 rounded">Fish & Chips</span>
+                            <i class="fa-solid fa-fish text-gray-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-4">Cowley Fish Bar</h3>
+                        <a href="https://cowley-fish-bar.netlify.app" target="_blank" class="inline-flex items-center text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors">
+                            Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-navy-900/10 group-hover:bg-transparent transition-all z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Manor Fish Bar" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-semibold text-gold-600 bg-gold-100 px-2 py-1 rounded">Fish & Chips</span>
+                            <i class="fa-solid fa-utensils text-gray-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-4">Manor Fish Bar</h3>
+                        <a href="https://manorfishbar.netlify.app" target="_blank" class="inline-flex items-center text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors">
+                            Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-navy-900/10 group-hover:bg-transparent transition-all z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Brick and Bean" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-semibold text-gold-600 bg-gold-100 px-2 py-1 rounded">Coffee Shop</span>
+                            <i class="fa-solid fa-mug-hot text-gray-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-4">Brick & Bean</h3>
+                        <a href="https://brick-bean.netlify.app" target="_blank" class="inline-flex items-center text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors">
+                            Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-navy-900/10 group-hover:bg-transparent transition-all z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Sunshine Business" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-semibold text-gold-600 bg-gold-100 px-2 py-1 rounded">Service</span>
+                            <i class="fa-solid fa-sun text-gray-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-4">Sunshine Ibstock</h3>
+                        <a href="https://sunshineibstock.netlify.app" target="_blank" class="inline-flex items-center text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors">
+                            Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-navy-900/10 group-hover:bg-transparent transition-all z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Desserts" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-semibold text-gold-600 bg-gold-100 px-2 py-1 rounded">Dessert Shop</span>
+                            <i class="fa-solid fa-ice-cream text-gray-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-4">Overdose Desserts</h3>
+                        <a href="https://overdose-desserts.netlify.app" target="_blank" class="inline-flex items-center text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors">
+                            Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-navy-900/10 group-hover:bg-transparent transition-all z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Cafe" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-semibold text-gold-600 bg-gold-100 px-2 py-1 rounded">Cafe & Deli</span>
+                            <i class="fa-solid fa-utensils text-gray-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-4">Theo's Cafe</h3>
+                        <a href="https://theos-cafe-and-deli.netlify.app" target="_blank" class="inline-flex items-center text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors">
+                            Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-navy-900/10 group-hover:bg-transparent transition-all z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fried Chicken" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-semibold text-gold-600 bg-gold-100 px-2 py-1 rounded">Chicken Shop</span>
+                            <i class="fa-solid fa-drumstick-bite text-gray-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-4">Hot Box Chicken</h3>
+                        <a href="https://hot-box-chicken.netlify.app" target="_blank" class="inline-flex items-center text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors">
+                            Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-navy-900/10 group-hover:bg-transparent transition-all z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chinese Food" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-semibold text-gold-600 bg-gold-100 px-2 py-1 rounded">Chinese Takeaway</span>
+                            <i class="fa-solid fa-bowl-rice text-gray-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-4">Hong Kong Kitchen</h3>
+                        <a href="https://hongkongkitchen.netlify.app" target="_blank" class="inline-flex items-center text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors">
+                            Visit Live Site <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-navy-900 py-20 text-center text-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to see your new website?</h2>
+            <p class="text-xl text-gray-300 mb-12">
+                No cost. No obligation. Just a great design waiting for your approval.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                <a href="mailto:njlarks@gmail.com" class="flex items-center justify-center gap-3 bg-white text-navy-900 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-bold transition-all shadow-lg min-w-[280px]">
+                    <i class="fa-solid fa-envelope text-gold-500"></i> njlarks@gmail.com
+                </a>
+                <a href="tel:07429139257" class="flex items-center justify-center gap-3 bg-gold-500 text-white hover:bg-gold-600 px-8 py-4 rounded-full text-lg font-bold transition-all shadow-lg min-w-[280px]">
+                    <i class="fa-solid fa-phone"></i> 07429139257
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-navy-900 border-t border-gray-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center gap-2 mb-4">
+                <span class="text-xl font-bold tracking-tight text-white">NJ<span class="text-gold-500">Larks</span></span>
+            </div>
+            <p class="text-gray-500 text-sm">
+                &copy; 2024 NJLarks Web Design. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
