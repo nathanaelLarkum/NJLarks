@@ -1,0 +1,353 @@
+Build a Complete Next.js Website for NJLarks
+
+You are an expert senior full-stack engineer, UI designer, UX designer, branding designer and SEO specialist.
+
+Your task is to completely replace the existing static website in this repository with a production-ready Next.js 15 website that showcases my software development services.
+
+Before making any code changes, inspect the existing repository and identify all links to my previous projects. Preserve these and automatically display them in a “Projects” section on the new site.
+
+About Me
+
+Brand Name: NJLarks
+
+Role: Software Engineer / Full Stack Developer
+
+I build:
+
+* Enterprise SaaS applications
+* Business management systems
+* Customer portals
+* Admin dashboards
+* Internal tools
+* AI integrations
+* Stripe payment systems
+* Lead generation websites
+* Small business websites
+* SEO-focused websites
+
+The website should communicate that I serve multiple types of customers:
+
+Starter Websites
+
+For:
+
+* Takeaways
+* Trades
+* Personal trainers
+* Hobby businesses
+* Local services
+* Small companies
+
+Price:
+
+Starting from £100
+
+Deliverables:
+
+* Fast single-page website
+* Mobile responsive
+* Contact form
+* SEO basics
+* Hosting guidance
+
+Business Websites
+
+Price:
+
+£600-£800+
+
+Deliverables:
+
+* Next.js website
+* Multiple pages
+* CMS/Admin features
+* Netlify Forms
+* Analytics
+* SEO setup
+* Performance optimisation
+
+Optional add-ons:
+
+* Admin dashboard (£200-£400)
+* Stripe integration (£200-£400)
+* Booking systems
+* Customer portals
+* AI features
+
+Internet Presence Package
+
+For businesses that need help getting online.
+
+Services:
+
+* Google Business Profile setup
+* Social media account setup
+* SEO foundations
+* AI search visibility optimisation
+* Online branding guidance
+
+Site Goals
+
+The website must:
+
+* Look premium
+* Load extremely fast
+* Feel modern and trustworthy
+* Generate leads
+* Make me appear highly professional
+* Convert visitors into enquiries
+
+The design should feel comparable to modern SaaS companies.
+
+Examples of inspiration:
+
+* Linear
+* Vercel
+* Raycast
+* Stripe
+* Resend
+
+Do not copy them.
+
+Tech Stack
+
+Use:
+
+* Next.js 15 App Router
+* TypeScript
+* Tailwind CSS
+* shadcn/ui
+* Lucide icons
+* Framer Motion (light usage only)
+* Netlify Forms
+* next-themes
+
+No unnecessary dependencies.
+
+Branding
+
+Create a complete logo for NJLarks.
+
+Requirements:
+
+* Modern
+* Minimal
+* Technology focused
+* Works in dark and light mode
+* SVG based
+* Custom design
+* Include favicon
+
+Generate all branding assets.
+
+Colour System
+
+Create a professional colour palette.
+
+I want CSS variables hardcoded into globals.css.
+
+Example structure:
+
+:root {
+–light1:
+–light2:
+–light3:
+–accent:
+}
+
+.dark {
+–dark1:
+–dark2:
+–dark3:
+–accent:
+}
+
+Extend Tailwind so components can use:
+
+bg-light1
+bg-light2
+bg-dark1
+bg-dark2
+text-accent
+
+The theme must automatically follow the user’s system preference.
+
+Required Pages
+
+Home
+
+Hero section with:
+
+* Strong headline
+* Subheadline
+* Call-to-action
+* Animated background
+
+Sections:
+
+* Services Overview
+* Featured Projects
+* Why Work With Me
+* Process
+* Technologies
+* Testimonials
+* FAQ
+* Contact CTA
+
+About
+
+Include:
+
+* My background
+* What I build
+* Development philosophy
+* Technology stack
+* Working process
+
+Services
+
+Create separate sections/cards for:
+
+* Starter Websites
+* Business Websites
+* Internet Presence Package
+* Custom Software
+
+Each should have:
+
+* Deliverables
+* Pricing guidance
+* Typical timeline
+* CTA
+
+Projects
+
+Automatically display projects discovered from the existing repository.
+
+Each project card should include:
+
+* Name
+* Description
+* Link
+* Tags
+
+If project metadata does not exist, generate sensible placeholders.
+
+Contact
+
+Use Netlify Forms.
+
+Requirements:
+
+* Name
+* Business Name
+* Email
+* Phone
+* Budget Range
+* Service Interested In
+* Message
+
+Form must function immediately when deployed to Netlify.
+
+Include hidden form-name field.
+
+Ask A Question
+
+Separate lightweight form.
+
+Purpose:
+
+Visitors can ask questions without requesting a quote.
+
+Also implemented using Netlify Forms.
+
+Fields:
+
+* Name
+* Email
+* Question
+
+Additional Features
+
+Create:
+
+Sticky Navigation
+
+* Smooth scrolling
+* Mobile menu
+* Theme switcher
+
+Social Proof Section
+
+Include placeholders for:
+
+* Projects completed
+* Years experience
+* Technologies used
+
+FAQ Section
+
+Generate realistic FAQs and answers.
+
+Process Section
+
+1. Discovery
+2. Design
+3. Build
+4. Launch
+5. Support
+
+Technology Section
+
+Display:
+
+* Next.js
+* React
+* TypeScript
+* Tailwind
+* Netlify
+* Supabase
+* PostgreSQL
+* Stripe
+* OpenAI APIs
+
+SEO
+
+Implement:
+
+* Metadata API
+* Open Graph
+* Twitter Cards
+* Sitemap
+* robots.txt
+* Structured Data
+* Local business schema
+
+Optimise every page.
+
+Performance
+
+Target:
+
+* Lighthouse 95+
+* Minimal bundle size
+* Lazy loading
+* Image optimisation
+* Proper code splitting
+
+Deliverables
+
+When complete:
+
+1. Build the entire website.
+2. Generate all components.
+3. Generate logo assets.
+4. Configure shadcn.
+5. Configure Tailwind.
+6. Configure themes.
+7. Configure Netlify Forms.
+8. Ensure TypeScript passes.
+9. Ensure production build succeeds.
+10. Provide a summary of all created files.
+
+Work autonomously and complete the implementation without asking for confirmation between steps.
