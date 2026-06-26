@@ -1,6 +1,7 @@
 [build]
-  command = "npm install --no-audit --no-fund && npm run build"
+  command = "npm install --no-audit --no-fund --maxsockets=1 && npm run build"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
+  npm_config_maxsockets = "1"

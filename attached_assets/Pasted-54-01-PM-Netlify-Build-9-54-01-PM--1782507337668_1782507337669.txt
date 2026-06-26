@@ -1,0 +1,56 @@
+54:01 PM: Netlify Build                                                 
+9:54:01 PM: ────────────────────────────────────────────────────────────────
+9:54:01 PM: ​
+9:54:01 PM: ❯ Version
+9:54:01 PM:   @netlify/build 36.0.0
+9:54:01 PM: ​
+9:54:01 PM: ❯ Flags
+9:54:01 PM:   accountId: 6932bbafb50cdec56f9278a2
+9:54:01 PM:   baseRelDir: true
+9:54:01 PM:   buildId: 6a3ee69aab1fda00087dd430
+9:54:01 PM:   deployId: 6a3ee69aab1fda00087dd432
+9:54:01 PM: ​
+9:54:01 PM: ❯ Current directory
+9:54:01 PM:   /opt/build/repo
+9:54:01 PM: ​
+9:54:01 PM: ❯ Config file
+9:54:01 PM:   /opt/build/repo/netlify.toml
+9:54:01 PM: ​
+9:54:01 PM: ❯ Context
+9:54:01 PM:   production
+9:54:01 PM: ​
+9:54:01 PM: build.command from netlify.toml                               
+9:54:01 PM: ────────────────────────────────────────────────────────────────
+9:54:01 PM: ​
+9:54:01 PM: $ npm install --no-audit --no-fund && npm run build
+9:55:13 PM: Failed during stage 'building site': Build script returned non-zero exit code: 2 (https://ntl.fyi/exit-code-2)
+9:55:12 PM: npm error Exit handler never called!
+9:55:12 PM: npm error This is an error with npm itself. Please report this error at:
+9:55:12 PM: npm error   <https://github.com/npm/cli/issues&gt;
+9:55:12 PM: npm error A complete log of this run can be found in: /opt/buildhome/.npm/_logs/2026-06-26T20_54_01_404Z-debug-0.log
+9:55:12 PM: > njlarks@0.1.0 build
+9:55:12 PM: > next build
+9:55:12 PM: sh: 1: next: not found
+9:55:12 PM: ​
+9:55:12 PM: "build.command" failed                                        
+9:55:12 PM: ────────────────────────────────────────────────────────────────
+9:55:12 PM: ​
+9:55:12 PM:   Error message
+9:55:12 PM:   Command failed with exit code 127: npm install --no-audit --no-fund && npm run build (https://ntl.fyi/exit-code-127)
+9:55:12 PM: ​
+9:55:12 PM:   Error location
+9:55:12 PM:   In build.command from netlify.toml:
+9:55:12 PM:   npm install --no-audit --no-fund && npm run build
+9:55:12 PM: ​
+9:55:12 PM:   Resolved config
+9:55:12 PM:   build:
+9:55:12 PM:     command: npm install --no-audit --no-fund && npm run build
+9:55:12 PM:     commandOrigin: config
+9:55:12 PM:     environment:
+9:55:12 PM:       - NODE_VERSION
+9:55:12 PM:     publish: /opt/build/repo/.next
+9:55:12 PM:     publishOrigin: config
+9:55:12 PM: Build failed due to a user error: Build script returned non-zero exit code: 2
+9:55:13 PM: Failing build: Failed to build site
+9:55:13 PM: Finished processing build request in 2m29.651s
+9:55:25 PM: [ERROR] Deploy logs are currently unavailable. We are working on resolving the issue.
