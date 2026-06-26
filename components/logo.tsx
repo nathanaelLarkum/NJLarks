@@ -9,11 +9,10 @@ interface LogoProps {
 
 export function Logo({ className, size = "md", showText = true }: LogoProps) {
   const sizes = {
-    sm: { icon: 28, text: "text-lg" },
+    sm: { icon: 30, text: "text-lg" },
     md: { icon: 36, text: "text-xl" },
     lg: { icon: 48, text: "text-2xl" },
   };
-
   const s = sizes[size];
 
   return (
@@ -26,41 +25,26 @@ export function Logo({ className, size = "md", showText = true }: LogoProps) {
         xmlns="http://www.w3.org/2000/svg"
         className="flex-shrink-0"
       >
-        <rect width="36" height="36" rx="8" fill="var(--accent)" />
+        <rect width="36" height="36" rx="8" fill="url(#logo-gradient)" />
         <path
-          d="M8 10L14 10L22 22H22V10H28V26H22L14 14H14V26H8V10Z"
-          fill="white"
+          d="M7 9L13 9L21 21.5H21V9H27V27H21L13 14.5H13V27H7V9Z"
+          fill="#D2D6D4"
           fillOpacity="0.95"
         />
-        <circle cx="28" cy="26" r="2.5" fill="white" fillOpacity="0.5" />
+        <circle cx="27" cy="27" r="2.5" fill="#A3C4BC" fillOpacity="0.7" />
+        <defs>
+          <linearGradient id="logo-gradient" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#413C58" />
+            <stop offset="1" stopColor="#181C22" />
+          </linearGradient>
+        </defs>
       </svg>
       {showText && (
-        <span className={cn("font-bold tracking-tight", s.text)}>
-          <span className="text-fore">NJ</span>
+        <span className={cn("font-heading font-bold tracking-tight", s.text)}>
+          <span className="text-light1">NJ</span>
           <span className="text-accent">Larks</span>
         </span>
       )}
     </Link>
-  );
-}
-
-export function LogoIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      width="32"
-      height="32"
-      viewBox="0 0 36 36"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      <rect width="36" height="36" rx="8" fill="var(--accent)" />
-      <path
-        d="M8 10L14 10L22 22H22V10H28V26H22L14 14H14V26H8V10Z"
-        fill="white"
-        fillOpacity="0.95"
-      />
-      <circle cx="28" cy="26" r="2.5" fill="white" fillOpacity="0.5" />
-    </svg>
   );
 }

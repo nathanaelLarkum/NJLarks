@@ -1,0 +1,410 @@
+NJLarks Premium Redesign V2
+
+The current website is a good MVP but it does not yet feel like a premium software consultancy.
+
+This redesign should focus on:
+
+* Better visual hierarchy
+* Better typography
+* Better storytelling
+* Better project presentation
+* Better transitions
+* Better imagery
+* Better mobile experience
+* Higher perceived value
+
+The goal is that visitors believe NJLarks is capable of delivering £10,000+ software projects while still offering affordable services.
+
+⸻
+
+New Design Direction
+
+Visual inspiration:
+
+* Linear
+* Stripe
+* Vercel
+* Resend
+* Framer
+* Clerk
+* Railway
+
+The site should feel:
+
+* Premium
+* Technical
+* Modern
+* Minimal
+* Confident
+
+Avoid:
+
+* Generic portfolio appearance
+* Bootstrap styling
+* Large empty sections
+* Emoji usage
+* Cartoon illustrations
+* Obvious AI-generated layouts
+
+⸻
+
+Colour System
+
+Replace existing palette.
+
+Primary Palette:
+
+–light1: #D2D6D4;
+–light2: #A3B1B0;
+–light3: #A3C4BC;
+
+–dark1: #181C22;
+–dark2: #23293A;
+–dark3: #413C58;
+
+–accent: #A3C4BC;
+–accent-dark: #413C58;
+
+Create a premium theme system.
+
+Use gradients such as:
+
+linear-gradient(
+135deg,
+#413C58,
+#181C22
+)
+
+and
+
+linear-gradient(
+135deg,
+#A3C4BC,
+#D2D6D4
+)
+
+for hero backgrounds and glow effects.
+
+Create subtle glass effects using these colours.
+
+No bright neon colours.
+
+No generic SaaS blue.
+
+⸻
+
+Typography Upgrade
+
+Remove current fonts.
+
+Use:
+
+Headings:
+Manrope
+
+Body:
+Inter
+
+Alternative:
+
+Headings:
+Satoshi
+
+Body:
+Inter
+
+Requirements:
+
+Hero heading:
+
+* Massive
+* Tight spacing
+* Extremely bold
+
+Body:
+
+* Elegant
+* Readable
+* Professional
+
+Create a stronger visual hierarchy across all sections.
+
+⸻
+
+Motion & Animation
+
+Current animations are too basic.
+
+Create premium microinteractions.
+
+Use Framer Motion.
+
+Requirements:
+
+* Smooth fade reveals
+* Staggered card animations
+* Hover elevation
+* Subtle glow transitions
+* Smooth navigation transitions
+* Magnetic CTA buttons
+
+Do NOT:
+
+* Use parallax
+* Use excessive movement
+* Hurt performance
+
+Animations should feel like Vercel or Linear.
+
+⸻
+
+Hero Section
+
+Redesign completely.
+
+Add:
+
+* Dynamic background glow
+* Layered gradients
+* Floating abstract shapes
+* Subtle grid pattern
+
+Headline:
+
+Software That Helps Businesses Move Faster
+
+Subheadline:
+
+From affordable business websites to custom SaaS platforms, admin dashboards, payment systems and AI-powered tools.
+
+Primary CTA:
+Start a Project
+
+Secondary CTA:
+View Work
+
+Add trust indicators:
+
+✔ Full Stack Engineer
+
+✔ Next.js Specialist
+
+✔ SaaS & AI Development
+
+✔ UK Based
+
+⸻
+
+Project Showcase
+
+Current projects section is not impressive enough.
+
+Every project card should include:
+
+* Project image preview
+* Project title
+* Built date
+* Client type
+* Short description
+* Technologies used
+* Visit site button
+
+Example:
+
+Built for:
+Independent Takeaway
+
+Completed:
+March 2025
+
+Description:
+Custom website focused on online orders, local SEO and lead generation.
+
+⸻
+
+Project Preview System
+
+Automatically create screenshots/previews.
+
+For every imported project:
+
+* Generate thumbnail
+* Use screenshot if available
+* Otherwise create a branded placeholder
+
+Cards should resemble modern case studies.
+
+Desktop:
+
+3-column masonry layout
+
+Mobile:
+
+Single-column premium cards
+
+⸻
+
+Case Study Experience
+
+Clicking a project should open:
+
+* Large preview image
+* Overview
+* Technologies
+* Challenges solved
+* Live link
+
+This should feel like a professional agency portfolio.
+
+⸻
+
+Images
+
+Replace low-quality imagery.
+
+Use high-quality modern photography.
+
+Themes:
+
+* Developers collaborating
+* Software products
+* Dashboards
+* Technology teams
+* Product design
+* Business owners
+
+Requirements:
+
+* Sharp images
+* Modern composition
+* Consistent style
+
+Use next/image everywhere.
+
+Lazy load all assets.
+
+⸻
+
+Iconography
+
+Remove all emojis.
+
+Use Lucide icons only.
+
+Use consistent stroke width.
+
+Create feature cards with:
+
+* Database icons
+* Cloud icons
+* AI icons
+* Payment icons
+* Dashboard icons
+
+⸻
+
+Mobile Experience
+
+The site must be exceptional on mobile.
+
+Requirements:
+
+* iPhone SE
+* iPhone 15
+* Pixel devices
+* Tablets
+
+Navigation:
+
+* Smooth slide-out menu
+* Animated backdrop blur
+
+Project cards:
+
+* Full-width
+* Touch-friendly
+
+Buttons:
+
+* Large tap targets
+
+No horizontal scrolling.
+
+No layout shift.
+
+⸻
+
+Section Upgrades
+
+Add:
+
+Featured Work
+
+Highlight 3 best projects.
+
+Technologies
+
+Display as premium logo grid.
+
+Development Process
+
+Discovery
+Planning
+Design
+Development
+Launch
+Support
+
+Testimonials
+
+Create placeholder testimonials component.
+
+FAQ
+
+Professional FAQ section.
+
+⸻
+
+Visual Polish
+
+Add:
+
+* Gradient borders
+* Glass cards
+* Soft shadows
+* Backdrop blur
+* Hover states
+* Scroll-triggered transitions
+
+Everything should feel handcrafted.
+
+⸻
+
+Performance
+
+Maintain:
+
+* Lighthouse 95+
+* Excellent Core Web Vitals
+* Fast mobile performance
+
+Visual quality must not reduce speed.
+
+⸻
+
+Final Review
+
+Review every section.
+
+If any text sounds like a freelancer portfolio, rewrite it.
+
+The site should feel like a premium software studio capable of building:
+
+* Business websites
+* SaaS products
+* Internal tools
+* Admin dashboards
+* AI integrations
+* Automation systems
+
+Deliver a polished, production-quality experience.

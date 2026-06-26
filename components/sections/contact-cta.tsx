@@ -1,44 +1,44 @@
 import Link from "next/link";
 import { ArrowRight, MessageSquare } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export function ContactCTA() {
   return (
-    <section className="py-24 bg-light1 dark:bg-dark1">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <div className="rounded-2xl border border-border bg-light2 dark:bg-dark2 p-12 relative overflow-hidden">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent rounded-full blur-3xl" />
+    <section className="py-24 md:py-32 bg-dark2">
+      <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+        <div className="relative rounded-2xl border border-light3/10 bg-dark1 p-12 md:p-16 overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-accent/40 to-transparent" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-dark3/20 blur-[80px] rounded-full" />
           </div>
 
           <div className="relative">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/30 bg-accent-muted text-accent text-xs font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/20 bg-accent/8 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              Available for new projects
+              <span className="text-xs text-accent font-medium">Available for new projects</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-fore mb-4">
-              Ready to build something great?
+            <h2 className="font-heading font-extrabold text-light1 text-balance mb-4" style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", letterSpacing: "-0.03em" }}>
+              Ready to build something that matters?
             </h2>
-            <p className="text-muted max-w-xl mx-auto mb-8 leading-relaxed">
-              Whether you need a simple website or a full custom software platform, 
-              let&apos;s talk about what you need and find the right fit.
+            <p className="text-muted text-sm max-w-lg mx-auto mb-10 leading-relaxed">
+              Whether it&apos;s a simple website or a complex software platform — let&apos;s discuss your project and find the right path forward.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Button asChild size="lg">
-                <Link href="/contact">
-                  Start a Project
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/ask">
-                  <MessageSquare className="h-4 w-4" />
-                  Ask a Question
-                </Link>
-              </Button>
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-accent text-dark1 text-sm font-semibold transition-all duration-300 hover:bg-light3 hover:shadow-[0_0_30px_rgba(163,196,188,0.35)] hover:-translate-y-0.5"
+              >
+                Start a Project
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+              <Link
+                href="/ask"
+                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl border border-light1/10 text-light2 text-sm font-medium transition-all duration-300 hover:border-accent/30 hover:text-light1 hover:bg-light1/5"
+              >
+                <MessageSquare className="h-4 w-4" />
+                Ask a Question
+              </Link>
             </div>
           </div>
         </div>

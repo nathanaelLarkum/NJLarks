@@ -4,28 +4,30 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-dark1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-accent text-white shadow hover:opacity-90 active:scale-[0.98]",
+          "bg-accent text-dark1 font-semibold hover:bg-light3 hover:shadow-[0_0_24px_rgba(163,196,188,0.3)] active:scale-[0.98]",
         destructive:
-          "bg-red-500 text-white shadow-sm hover:bg-red-500/90",
+          "bg-red-500/20 text-red-400 border border-red-500/30 hover:bg-red-500/30",
         outline:
-          "border border-border bg-transparent hover:bg-light2 dark:hover:bg-dark3 text-fore",
+          "border border-light3/10 bg-transparent text-light2 hover:border-accent/30 hover:text-light1 hover:bg-light1/5",
         secondary:
-          "bg-light2 dark:bg-dark3 text-fore hover:bg-light3 dark:hover:bg-dark2",
+          "bg-dark3/60 border border-light3/8 text-light2 hover:bg-dark3/80 hover:text-light1",
         ghost:
-          "hover:bg-light2 dark:hover:bg-dark3 text-fore",
+          "text-muted hover:text-light1 hover:bg-light1/5",
         link:
           "text-accent underline-offset-4 hover:underline",
+        accent:
+          "bg-accent/10 border border-accent/20 text-accent hover:bg-accent/20",
       },
       size: {
         default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-11 rounded-xl px-6 text-base",
-        xl: "h-13 rounded-xl px-8 text-base",
+        sm: "h-8 rounded-lg px-3 text-xs",
+        lg: "h-11 rounded-xl px-6",
+        xl: "h-12 rounded-xl px-8 text-base",
         icon: "h-9 w-9",
       },
     },

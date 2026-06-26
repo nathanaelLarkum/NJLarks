@@ -10,17 +10,17 @@ import { FAQ } from "@/components/sections/faq";
 import { ContactCTA } from "@/components/sections/contact-cta";
 
 export const metadata: Metadata = {
-  title: "NJLarks — Full-Stack Software Engineer",
+  title: "NJLarks — Software Studio",
   description:
-    "NJLarks builds fast, modern websites and custom software. From £100 starter sites to enterprise SaaS — see your website before you pay a penny.",
+    "From affordable business websites to custom SaaS platforms, admin dashboards, payment systems and AI-powered tools.",
 };
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <ServicesOverview />
       <FeaturedProjects />
+      <ServicesOverview />
       <WhyMe />
       <Process />
       <Technologies />

@@ -1,34 +1,46 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope, Inter } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "NJLarks — Full-Stack Software Engineer",
+    default: "NJLarks — Software Studio",
     template: "%s | NJLarks",
   },
   description:
-    "NJLarks builds fast, modern websites and custom software for businesses of all sizes. Starter sites from £100. Business websites, SaaS, AI integrations, and more.",
+    "NJLarks builds fast, modern software — from affordable business websites to custom SaaS platforms, admin dashboards, payment systems and AI-powered tools.",
   keywords: [
-    "web developer",
-    "full stack developer",
-    "Next.js developer",
-    "website design UK",
-    "small business website",
+    "software development",
+    "Next.js developer UK",
     "SaaS development",
+    "web design UK",
+    "business websites",
+    "admin dashboards",
+    "AI integration",
     "NJLarks",
   ],
   authors: [{ name: "NJLarks" }],
@@ -38,15 +50,15 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "https://njlarks.com",
     siteName: "NJLarks",
-    title: "NJLarks — Full-Stack Software Engineer",
+    title: "NJLarks — Software Studio",
     description:
-      "Fast, modern websites and custom software for businesses of all sizes. Starter sites from £100.",
+      "From affordable business websites to custom SaaS platforms, admin dashboards, payment systems and AI-powered tools.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NJLarks — Full-Stack Software Engineer",
+    title: "NJLarks — Software Studio",
     description:
-      "Fast, modern websites and custom software for businesses of all sizes.",
+      "From affordable business websites to custom SaaS platforms and AI-powered tools.",
     creator: "@njlarks",
   },
   robots: {
@@ -68,15 +80,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${manrope.variable} ${inter.variable} ${geistMono.variable} font-sans antialiased bg-dark1 text-light1`}
         suppressHydrationWarning
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <Navigation />

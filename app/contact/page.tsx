@@ -1,54 +1,54 @@
 import type { Metadata } from "next";
-import { Mail, MessageSquare } from "lucide-react";
+import { Mail, MessageSquare, Clock } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Get in touch with NJLarks to start a project, request a free demo, or ask about services.",
+  description: "Get in touch with NJLarks to start a project or request a quote.",
 };
 
 export default function ContactPage() {
   return (
-    <div className="pt-16">
-      <section className="py-24 bg-light1 dark:bg-dark1">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+    <div className="pt-16 bg-dark1 min-h-screen">
+      <section className="py-24 md:py-32">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8">
           <div className="grid lg:grid-cols-5 gap-16">
             <div className="lg:col-span-2">
-              <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-3">
-                Get in touch
-              </p>
-              <h1 className="text-4xl font-bold tracking-tight text-fore mb-4">
+              <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-4">Contact</p>
+              <h1 className="font-heading font-extrabold text-light1 text-balance mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "-0.04em" }}>
                 Start a project
               </h1>
-              <p className="text-muted leading-relaxed mb-8">
-                Fill in the form and I&apos;ll get back to you within 24 hours with a clear plan and pricing. No fluff.
+              <p className="text-sm text-muted leading-relaxed mb-10">
+                Fill in the form and I&apos;ll respond within 24 hours with a clear plan, honest pricing, and no obligation.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-3 mb-10">
                 <a
                   href="mailto:njlarks@gmail.com"
-                  className="flex items-center gap-3 text-sm text-muted hover:text-fore transition-colors"
+                  className="flex items-center gap-3 group"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-light2 dark:bg-dark3 border border-border flex items-center justify-center">
-                    <Mail className="h-4 w-4" />
+                  <div className="w-9 h-9 rounded-xl border border-light3/10 bg-dark2 flex items-center justify-center group-hover:border-accent/30 transition-colors">
+                    <Mail className="h-3.5 w-3.5 text-muted group-hover:text-accent transition-colors" />
                   </div>
-                  njlarks@gmail.com
+                  <span className="text-sm text-muted group-hover:text-light2 transition-colors">njlarks@gmail.com</span>
                 </a>
                 <a
                   href="/ask"
-                  className="flex items-center gap-3 text-sm text-muted hover:text-fore transition-colors"
+                  className="flex items-center gap-3 group"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-light2 dark:bg-dark3 border border-border flex items-center justify-center">
-                    <MessageSquare className="h-4 w-4" />
+                  <div className="w-9 h-9 rounded-xl border border-light3/10 bg-dark2 flex items-center justify-center group-hover:border-accent/30 transition-colors">
+                    <MessageSquare className="h-3.5 w-3.5 text-muted group-hover:text-accent transition-colors" />
                   </div>
-                  Just have a question? Use the Ask form
+                  <span className="text-sm text-muted group-hover:text-light2 transition-colors">Quick question? Use the Ask form</span>
                 </a>
               </div>
 
-              <div className="mt-10 p-5 rounded-xl border border-border bg-light2 dark:bg-dark2">
-                <p className="text-xs font-semibold text-fore mb-1">Response time</p>
-                <p className="text-sm text-muted">Usually within 24 hours on weekdays.</p>
+              <div className="rounded-xl border border-light3/10 bg-dark2 p-5">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <Clock className="h-3.5 w-3.5 text-accent" />
+                  <p className="text-xs font-semibold text-light1">Response time</p>
+                </div>
+                <p className="text-xs text-muted">Usually within 24 hours on weekdays. Often much sooner.</p>
               </div>
             </div>
 
