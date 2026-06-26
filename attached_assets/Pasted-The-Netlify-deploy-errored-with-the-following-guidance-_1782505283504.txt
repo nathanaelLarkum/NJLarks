@@ -1,0 +1,105 @@
+The Netlify deploy errored, with the following guidance provided:
+
+- **Diagnosis:** The build fails because the `next` binary is missing when the command `npm run build` executes. At [#L63-L67](#L63-L67), `npm` tries to run `next build`, but `sh: 1: next: not found` shows that the Next.js CLI isn’t installed in the production environment. This happens when `next` (and usually `react` / `react-dom`) live under `devDependencies`; Netlify installs only production dependencies (`npm install --omit=dev`), so the CLI isn’t available.
+
+- **Solution:**  
+  1. Open `package.json` and move `next`, `react`, and `react-dom` from `"devDependencies"` to `"dependencies"` (or add them there if missing). For example:
+     ```json
+     {
+       "dependencies": {
+         "next": "15.5.19",
+         "react": "...",
+         "react-dom": "...",
+         "...": "..."
+       }
+     }
+     ```
+  2. Run `npm install` locally so `package-lock.json` reflects the change.  
+  3. Commit and push the updated `package.json` and `package-lock.json`, then trigger a new Netlify deploy.
+
+This ensures the Next.js CLI is available during the Netlify build, allowing `npm run build` to succeed.
+
+The relevant error logs are:
+
+Line 0: build-image version: cbbb2660d860fe70694043ec05851a3910a2bf39 (noble-new-builds)
+Line 1: buildbot version: 863d78834c7df98fbadcc32a31460eb244115cc2
+Line 2: Fetching cached dependencies
+Line 3: Failed to fetch cache, continuing with build
+Line 4: Starting to prepare the repo for build
+Line 5: No cached dependencies found. Cloning fresh repo
+Line 6: git clone --filter=blob:none https://github.com/nathanaelLarkum/NJLarks
+Line 7: Preparing Git Reference refs/heads/main
+Line 8: Custom publish path detected. Proceeding with the specified path: '.next'
+Line 9: Custom build command detected. Proceeding with the specified command: 'npm run build'
+Line 10: Installing dependencies
+Line 11: mise ~/.config/mise/config.toml tools: python@3.14.3
+Line 12: mise ~/.config/mise/config.toml tools: ruby@3.4.8
+Line 13: mise ~/.config/mise/config.toml tools: go@1.26.2
+Line 14: Attempting Node.js version '20' from .nvmrc
+Line 15: v20.20.2 is already installed.
+Line 16: Now using node v20.20.2 (npm v10.8.2)
+Line 17: Enabling Node.js Corepack
+Line 18: No npm workspaces detected
+Line 19: Installing npm packages using npm version 10.8.2
+Line 20: npm error Exit handler never called!
+Line 21: npm error This is an error with npm itself. Please report this error at:
+Line 22: npm error   <https://github.com/npm/cli/issues>
+Line 23: npm error A complete log of this run can be found in: /opt/buildhome/.npm/_logs/2026-06-26T20_17_25_783Z-debug-0.log
+Line 24: npm packages installed
+Line 25: Successfully installed dependencies
+Line 26: Detected 1 framework(s)
+Line 27: "next" at version "15.5.19"
+Line 28: Starting build script
+Line 29: Section completed: initializing
+Line 30: ​
+Line 31: Netlify Build                                                 
+Line 32: ────────────────────────────────────────────────────────────────
+Line 33: ​
+Line 47:   /opt/build/repo/netlify.toml
+Line 48: ​
+Line 49: ❯ Context
+Line 50:   production
+Line 51: ​
+Line 52: ❯ Using Next.js Runtime - v4.41.6
+Line 53: ​
+Line 54: ❯ Outdated plugins
+Line 55:    - @netlify/plugin-nextjs@4.41.6: latest version is 5.15.12
+Line 56:      To upgrade this plugin, please remove it from "netlify.toml" and install it from the Netlify plugins directory instead
+Line 57: Failed during stage 'building site': Build script returned non-zero exit code: 2
+Line 58: No Next.js cache to restore.
+Line 59: ​
+Line 60: build.command from netlify.toml                               
+Line 61: ────────────────────────────────────────────────────────────────
+Line 62: ​
+Line 63: $ npm run build
+Line 64: > njlarks@0.1.0 build
+Line 65: > next build
+Line 66: sh: 1: next: not found
+Line 67: ​
+Line 68: "build.command" failed                                        
+Line 69: ────────────────────────────────────────────────────────────────
+Line 70: ​
+Line 71:   Error message
+Line 72:   Command failed with exit code 127: npm run build
+Line 73: ​
+Line 74:   Error location
+Line 75:   In build.command from netlify.toml:
+Line 76:   npm run build
+Line 77: ​
+Line 78:   Resolved config
+Line 79:   build:
+Line 80:     command: npm run build
+Line 81:     commandOrigin: config
+Line 82:     environment:
+Line 83:       - NODE_VERSION
+Line 84:       - NEXT_PRIVATE_TARGET
+Line 85:     publish: /opt/build/repo/.next
+Line 86:     publishOrigin: config
+Line 87:   plugins:
+Line 88:     - inputs: {}
+Line 89:       origin: config
+Line 90:       package: "@netlify/plugin-nextjs"
+Line 91: Build failed due to a user error: Build script returned non-zero exit code: 2
+Line 92: Failing build: Failed to build site
+Line 93: Finished processing build request in 1m47.248s
+Line 94: [ERROR] Deploy logs are currently unavailable. We are working on resolving the issue.
