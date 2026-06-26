@@ -1,7 +1,7 @@
 [build]
-  command = "npm install --no-audit --no-fund --maxsockets=1 && npm run build"
+  command = "pnpm install && pnpm run build"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
-  npm_config_maxsockets = "1"
+  PNPM_VERSION = "9"
