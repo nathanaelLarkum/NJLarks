@@ -1,0 +1,101 @@
+The Netlify deploy errored, with the following guidance provided:
+
+**Diagnosis**
+- The build runs `npm run build`, but `[line 63](#L63)` shows `sh: 1: next: not found`, so the Next.js CLI isn’t present in `node_modules`.
+- In [`package.json`](https://github.com/nathanaelLarkum/NJLarks/blob/main/package.json), `next` is listed under `devDependencies`. Because Netlify builds run with `NODE_ENV=production`, `npm ci` skips dev dependencies, leaving the `next` binary unavailable.
+
+**Solution**
+Move `next` (and any other build-time requirements) from `devDependencies` into `dependencies`, then commit the change:
+
+```json
+// package.json
+{
+  "dependencies": {
+    "next": "15.5.19",
+    "react": "...",
+    "react-dom": "..."
+  },
+  "devDependencies": {
+    // keep only true dev tools here
+  }
+}
+```
+
+After updating, push the commit so Netlify installs Next.js during the build and rerun the deployment.
+
+The relevant error logs are:
+
+Line 0: build-image version: cbbb2660d860fe70694043ec05851a3910a2bf39 (noble-new-builds)
+Line 1: buildbot version: 863d78834c7df98fbadcc32a31460eb244115cc2
+Line 2: Fetching cached dependencies
+Line 3: Failed to fetch cache, continuing with build
+Line 4: Starting to prepare the repo for build
+Line 5: No cached dependencies found. Cloning fresh repo
+Line 6: git clone --filter=blob:none https://github.com/nathanaelLarkum/NJLarks
+Line 7: Preparing Git Reference refs/heads/main
+Line 8: Custom publish path detected. Proceeding with the specified path: '.next'
+Line 9: Custom build command detected. Proceeding with the specified command: 'npm ci && npm run build'
+Line 10: Installing dependencies
+Line 11: mise ~/.config/mise/config.toml tools: python@3.14.3
+Line 12: mise ~/.config/mise/config.toml tools: ruby@3.4.8
+Line 13: mise ~/.config/mise/config.toml tools: go@1.26.2
+Line 14: Attempting Node.js version '20' from .nvmrc
+Line 15: v20.20.2 is already installed.
+Line 16: Now using node v20.20.2 (npm v10.8.2)
+Line 17: Enabling Node.js Corepack
+Line 18: No npm workspaces detected
+Line 19: Installing npm packages using npm version 10.8.2
+Line 20: npm error Exit handler never called!
+Line 21: npm error This is an error with npm itself. Please report this error at:
+Line 22: npm error   <https://github.com/npm/cli/issues>
+Line 23: npm error A complete log of this run can be found in: /opt/buildhome/.npm/_logs/2026-06-26T20_22_22_468Z-debug-0.log
+Line 24: npm packages installed
+Line 25: Successfully installed dependencies
+Line 26: Detected 1 framework(s)
+Line 27: "next" at version "15.5.19"
+Line 28: Starting build script
+Line 29: Section completed: initializing
+Line 30: ​
+Line 31: Netlify Build                                                 
+Line 32: ────────────────────────────────────────────────────────────────
+Line 33: ​
+Line 46: ❯ Config file
+Line 47:   /opt/build/repo/netlify.toml
+Line 48: ​
+Line 49: ❯ Context
+Line 50:   production
+Line 51: ​
+Line 52: build.command from netlify.toml                               
+Line 53: ────────────────────────────────────────────────────────────────
+Line 54: ​
+Line 55: $ npm ci && npm run build
+Line 56: Failed during stage 'building site': Build script returned non-zero exit code: 2
+Line 57: npm error Exit handler never called!
+Line 58: npm error This is an error with npm itself. Please report this error at:
+Line 59: npm error   <https://github.com/npm/cli/issues>
+Line 60: npm error A complete log of this run can be found in: /opt/buildhome/.npm/_logs/2026-06-26T20_23_36_258Z-debug-0.log
+Line 61: > njlarks@0.1.0 build
+Line 62: > next build
+Line 63: sh: 1: next: not found
+Line 64: ​
+Line 65: "build.command" failed                                        
+Line 66: ────────────────────────────────────────────────────────────────
+Line 67: ​
+Line 68:   Error message
+Line 69:   Command failed with exit code 127: npm ci && npm run build
+Line 70: ​
+Line 71:   Error location
+Line 72:   In build.command from netlify.toml:
+Line 73:   npm ci && npm run build
+Line 74: ​
+Line 75:   Resolved config
+Line 76:   build:
+Line 77:     command: npm ci && npm run build
+Line 78:     commandOrigin: config
+Line 79:     environment:
+Line 80:       - NODE_VERSION
+Line 81:     publish: /opt/build/repo/.next
+Line 82:     publishOrigin: config
+Line 83: Build failed due to a user error: Build script returned non-zero exit code: 2
+Line 84: Failing build: Failed to build site
+Line 85: Finished processing build request in 2m28.285s
