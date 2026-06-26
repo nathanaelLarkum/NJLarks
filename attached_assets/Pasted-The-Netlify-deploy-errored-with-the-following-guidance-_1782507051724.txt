@@ -1,0 +1,89 @@
+The Netlify deploy errored, with the following guidance provided:
+
+Diagnosis  
+- [line 56](#L56) shows `npx next build` downloading `next@16.2.9` on the fly, which means the project does not have `next` listed in its dependencies.  
+- Because the package is missing from `node_modules`, Turbopack tries to infer a workspace root outside the project and then fails to locate `next/package.json`, producing the fatal error in [lines 62-67](#L62-L67).  
+
+Solution  
+1. Open the project’s `package.json` and add the correct `next` version to the `dependencies` section (e.g., `npm install next@<your-version>`).  
+2. Commit the changes to `package.json` and the updated lock file so the dependency is available during the Netlify build.  
+3. Redeploy; the build should now use the locally declared Next.js package and complete successfully.
+
+The relevant error logs are:
+
+Line 0: build-image version: cbbb2660d860fe70694043ec05851a3910a2bf39 (noble-new-builds)
+Line 1: buildbot version: 863d78834c7df98fbadcc32a31460eb244115cc2
+Line 2: Fetching cached dependencies
+Line 3: Failed to fetch cache, continuing with build
+Line 4: Starting to prepare the repo for build
+Line 5: No cached dependencies found. Cloning fresh repo
+Line 6: git clone --filter=blob:none https://github.com/nathanaelLarkum/NJLarks
+Line 7: Preparing Git Reference refs/heads/main
+Line 8: Custom publish path detected. Proceeding with the specified path: '.next'
+Line 9: Custom build command detected. Proceeding with the specified command: 'npx next build'
+Line 10: Installing dependencies
+Line 11: mise ~/.config/mise/config.toml tools: python@3.14.3
+Line 12: mise ~/.config/mise/config.toml tools: ruby@3.4.8
+Line 13: mise ~/.config/mise/config.toml tools: go@1.26.2
+Line 14: Attempting Node.js version '20' from .nvmrc
+Line 15: v20.20.2 is already installed.
+Line 16: Now using node v20.20.2 (npm v10.8.2)
+Line 17: Enabling Node.js Corepack
+Line 18: No npm workspaces detected
+Line 19: Installing npm packages using npm version 10.8.2
+Line 20: npm error Exit handler never called!
+Line 21: npm error This is an error with npm itself. Please report this error at:
+Line 22: npm error   <https://github.com/npm/cli/issues>
+Line 23: npm error A complete log of this run can be found in: /opt/buildhome/.npm/_logs/2026-06-26T20_48_33_574Z-debug-0.log
+Line 24: npm packages installed
+Line 25: Successfully installed dependencies
+Line 26: Detected 1 framework(s)
+Line 27: "next" at version "15.5.19"
+Line 28: Starting build script
+Line 29: Section completed: initializing
+Line 30: ​
+Line 31: Netlify Build                                                 
+Line 32: ────────────────────────────────────────────────────────────────
+Line 33: ​
+Line 50:   production
+Line 51: ​
+Line 52: build.command from netlify.toml                               
+Line 53: ────────────────────────────────────────────────────────────────
+Line 54: ​
+Line 55: $ npx next build
+Line 56: npm warn exec The following package was not found and will be installed: next@16.2.9
+Line 57: ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/doc
+Line 58: ▲ Next.js 16.2.9 (Turbopack)
+Line 59:   Creating an optimized production build ...
+Line 60: Failed during stage 'building site': Build script returned non-zero exit code: 2
+Line 61: > Build error occurred
+Line 62: Error: Turbopack build failed with 1 errors:
+Line 63: ./app
+Line 64: Error: Next.js inferred your workspace root, but it may not be correct.
+Line 65:     We couldn't find the Next.js package (next/package.json) from the project directory: /opt/build/
+Line 66:     Note: For security and performance reasons, files outside of the project directory will not be compiled.
+Line 67:     See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more inf
+Line 68:     at ignore-listed frames
+Line 69: ​
+Line 70: "build.command" failed                                        
+Line 71: ────────────────────────────────────────────────────────────────
+Line 72: ​
+Line 73:   Error message
+Line 74:   Command failed with exit code 1: npx next build
+Line 75: ​
+Line 76:   Error location
+Line 77:   In build.command from netlify.toml:
+Line 78:   npx next build
+Line 79: ​
+Line 80:   Resolved config
+Line 81:   build:
+Line 82:     command: npx next build
+Line 83:     commandOrigin: config
+Line 84:     environment:
+Line 85:       - NODE_VERSION
+Line 86:       - NPM_VERSION
+Line 87:     publish: /opt/build/repo/.next
+Line 88:     publishOrigin: config
+Line 89: Build failed due to a user error: Build script returned non-zero exit code: 2
+Line 90: Failing build: Failed to build site
+Line 91: Finished processing build request in 1m30.107s

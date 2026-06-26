@@ -1,7 +1,6 @@
 [build]
-  command = "npx next build"
+  command = "npm install --no-audit --no-fund && npm run build"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
-  NPM_VERSION = "10.8.2"
