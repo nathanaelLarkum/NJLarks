@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Zap, Clock } from "lucide-react";
 import { m } from "framer-motion";
 
 const trustIndicators = [
@@ -31,10 +31,77 @@ export function Hero() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-dark2/40 blur-[160px]" />
       </div>
 
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-20 right-10 md:right-24 w-64 h-64 rounded-2xl border border-accent/8 bg-dark3/10 rotate-12 animate-float" />
-        <div className="absolute bottom-32 left-8 md:left-16 w-40 h-40 rounded-xl border border-light2/6 bg-dark2/20 rotate-[-8deg] animate-float-delayed" />
-        <div className="absolute top-1/2 right-4 md:right-8 w-24 h-24 rounded-lg border border-accent/10 bg-accent/5 rotate-6 animate-float-slow" />
+      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+
+        {/* Floating card 1 — Lighthouse performance */}
+        <div className="absolute top-20 right-10 md:right-24 w-56 rounded-2xl border border-accent/15 bg-dark2/80 rotate-12 animate-float overflow-hidden">
+          <div className="p-4">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-6 h-6 rounded-md bg-accent/12 flex items-center justify-center">
+                <Zap className="h-3 w-3 text-accent" strokeWidth={2} />
+              </div>
+              <span className="text-[10px] font-semibold text-accent uppercase tracking-wider">Performance</span>
+            </div>
+            <div className="text-[2rem] font-extrabold text-light1 font-heading leading-none mb-0.5">95+</div>
+            <div className="text-[10px] text-muted mb-4">Lighthouse Score</div>
+            <div className="space-y-2">
+              {[
+                { label: "Speed", value: 98, w: "98%" },
+                { label: "SEO", value: 100, w: "100%" },
+                { label: "Access.", value: 96, w: "96%" },
+              ].map(({ label, value, w }) => (
+                <div key={label}>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-[9px] text-muted">{label}</span>
+                    <span className="text-[9px] font-semibold text-light2">{value}</span>
+                  </div>
+                  <div className="h-[3px] bg-dark3/60 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-accent to-light3 rounded-full" style={{ width: w }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Floating card 2 — Recent delivery with mini site mockup */}
+        <div className="absolute bottom-32 left-8 md:left-16 w-40 rounded-xl border border-light2/10 bg-dark2/80 rotate-[-8deg] animate-float-delayed overflow-hidden">
+          <div className="p-3.5">
+            <div className="flex items-center gap-1.5 mb-2.5">
+              <CheckCircle2 className="h-3 w-3 text-accent" />
+              <span className="text-[9px] font-semibold text-accent">Just Delivered</span>
+            </div>
+            <div className="w-full h-[70px] rounded-lg bg-dark1 overflow-hidden mb-2.5 border border-light3/8">
+              <div className="h-[13px] bg-dark3/60 border-b border-light3/8 flex items-center gap-1 px-1.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent/40" />
+                <div className="flex-1 h-[3px] rounded-full bg-light2/15 mx-1" />
+              </div>
+              <div className="p-1.5 space-y-1">
+                <div className="w-full h-1.5 rounded-sm bg-light2/12" />
+                <div className="w-3/4 h-1.5 rounded-sm bg-light2/8" />
+                <div className="flex gap-1 mt-1.5">
+                  <div className="w-1/2 h-5 rounded-sm bg-dark3/70" />
+                  <div className="w-1/2 h-5 rounded-sm bg-dark3/40" />
+                </div>
+              </div>
+            </div>
+            <div className="text-[9px] text-muted">
+              Live in <span className="text-light1 font-semibold">3 days</span> · 10+ delivered
+            </div>
+          </div>
+        </div>
+
+        {/* Floating card 3 — Response time badge */}
+        <div className="absolute top-1/2 right-4 md:right-8 w-[84px] rounded-xl border border-accent/12 bg-dark2/75 rotate-6 animate-float-slow overflow-hidden">
+          <div className="p-3 text-center">
+            <div className="w-7 h-7 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-2">
+              <Clock className="h-3.5 w-3.5 text-accent" strokeWidth={1.5} />
+            </div>
+            <div className="text-[17px] font-extrabold text-light1 font-heading leading-none">~4hr</div>
+            <div className="text-[8px] text-muted mt-1 leading-tight">avg. reply<br />time</div>
+          </div>
+        </div>
+
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 py-32 text-center">
