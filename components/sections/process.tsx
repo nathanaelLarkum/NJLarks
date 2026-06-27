@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Search, Map, Paintbrush, Code2, Rocket, Headphones } from "lucide-react";
 
 const steps = [
@@ -62,7 +62,7 @@ export function Process() {
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
-              <motion.div
+              <m.div
                 key={step.step}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -80,7 +80,7 @@ export function Process() {
                     <p className="text-xs text-muted leading-relaxed">{step.description}</p>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

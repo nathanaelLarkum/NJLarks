@@ -28,14 +28,14 @@ export function Logo({ className, size = "md", showText = true }: LogoProps) {
         <rect width="36" height="36" rx="8" fill="url(#logo-gradient)" />
         <path
           d="M7 9L13 9L21 21.5H21V9H27V27H21L13 14.5H13V27H7V9Z"
-          fill="#D2D6D4"
+          style={{ fill: "var(--light1)" }}
           fillOpacity="0.95"
         />
-        <circle cx="27" cy="27" r="2.5" fill="#A3C4BC" fillOpacity="0.7" />
+        <circle cx="27" cy="27" r="2.5" style={{ fill: "var(--accent)" }} fillOpacity="0.7" />
         <defs>
           <linearGradient id="logo-gradient" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#413C58" />
-            <stop offset="1" stopColor="#181C22" />
+            <stop style={{ stopColor: "var(--dark3)" }} />
+            <stop offset="1" style={{ stopColor: "var(--dark1)" }} />
           </linearGradient>
         </defs>
       </svg>

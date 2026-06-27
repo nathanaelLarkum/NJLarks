@@ -26,7 +26,7 @@ export const projects: Project[] = [
     tags: ["Takeaway", "Local SEO", "Lead Gen"],
     technologies: ["HTML", "Tailwind CSS", "Netlify"],
     featured: true,
-    gradient: "from-[#413C58] to-[#181C22]",
+    gradient: "from-dark3 to-dark1",
   },
   {
     id: "the-crown-uxbridge",
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     tags: ["Pub", "Events", "Menu"],
     technologies: ["HTML", "Tailwind CSS", "Netlify"],
     featured: true,
-    gradient: "from-[#23293A] to-[#181C22]",
+    gradient: "from-dark2 to-dark1",
   },
   {
     id: "cowley-fish-bar",
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     tags: ["Takeaway", "Mobile-first", "Local SEO"],
     technologies: ["HTML", "Tailwind CSS", "Netlify"],
     featured: true,
-    gradient: "from-[#413C58] to-[#23293A]",
+    gradient: "from-dark3 to-dark2",
   },
   {
     id: "manor-fish-bar",
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     completedDate: "December 2024",
     tags: ["Takeaway", "Mobile", "Local Business"],
     technologies: ["HTML", "Tailwind CSS", "Netlify"],
-    gradient: "from-[#181C22] to-[#23293A]",
+    gradient: "from-dark1 to-dark2",
   },
   {
     id: "brick-and-bean",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     tags: ["Cafe", "Brunch", "Brand Identity"],
     technologies: ["HTML", "Tailwind CSS", "Netlify"],
     featured: true,
-    gradient: "from-[#413C58] to-[#181C22]",
+    gradient: "from-dark3 to-dark1",
   },
   {
     id: "sunshine-ibstock",
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     completedDate: "October 2024",
     tags: ["Service Business", "Lead Gen", "SEO"],
     technologies: ["HTML", "Tailwind CSS", "Netlify"],
-    gradient: "from-[#23293A] to-[#181C22]",
+    gradient: "from-dark2 to-dark1",
   },
   {
     id: "overdose-desserts",
@@ -107,7 +107,7 @@ export const projects: Project[] = [
     completedDate: "September 2024",
     tags: ["Desserts", "Food", "Brand"],
     technologies: ["HTML", "Tailwind CSS", "Netlify"],
-    gradient: "from-[#413C58] to-[#23293A]",
+    gradient: "from-dark3 to-dark2",
   },
   {
     id: "theos-cafe",
@@ -120,7 +120,7 @@ export const projects: Project[] = [
     completedDate: "August 2024",
     tags: ["Cafe", "Deli", "Menu"],
     technologies: ["HTML", "Tailwind CSS", "Netlify"],
-    gradient: "from-[#23293A] to-[#413C58]",
+    gradient: "from-dark2 to-dark3",
   },
   {
     id: "hot-box-chicken",
@@ -133,7 +133,7 @@ export const projects: Project[] = [
     completedDate: "July 2024",
     tags: ["Takeaway", "Chicken", "Local Business"],
     technologies: ["HTML", "Tailwind CSS", "Netlify"],
-    gradient: "from-[#181C22] to-[#413C58]",
+    gradient: "from-dark1 to-dark3",
   },
   {
     id: "hong-kong-kitchen",
@@ -146,7 +146,7 @@ export const projects: Project[] = [
     completedDate: "June 2024",
     tags: ["Takeaway", "Chinese", "Local SEO"],
     technologies: ["HTML", "Tailwind CSS", "Netlify"],
-    gradient: "from-[#413C58] to-[#181C22]",
+    gradient: "from-dark3 to-dark1",
   },
 ];
 

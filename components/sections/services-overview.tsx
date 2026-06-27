@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Globe, LayoutDashboard, Search, Cpu, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const services = [
@@ -67,7 +67,7 @@ export function ServicesOverview() {
           {services.map((service, i) => {
             const Icon = service.icon;
             return (
-              <motion.div
+              <m.div
                 key={service.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -102,7 +102,7 @@ export function ServicesOverview() {
                     ))}
                   </div>
                 </Link>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

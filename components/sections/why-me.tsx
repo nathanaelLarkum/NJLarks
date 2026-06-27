@@ -1,7 +1,7 @@
 "use client";
 
 import { Zap, ShieldCheck, MessageSquare, TrendingUp, Clock, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const reasons = [
   {
@@ -57,7 +57,7 @@ export function WhyMe() {
             {reasons.map((reason, i) => {
               const Icon = reason.icon;
               return (
-                <motion.div
+                <m.div
                   key={reason.title}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export function WhyMe() {
                     <h3 className="font-heading font-semibold text-light1 text-sm mb-1">{reason.title}</h3>
                     <p className="text-xs text-muted leading-relaxed">{reason.description}</p>
                   </div>
-                </motion.div>
+                </m.div>
               );
             })}
           </div>

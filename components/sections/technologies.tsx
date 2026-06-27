@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const techGroups = [
   {
@@ -47,7 +47,7 @@ export function Technologies() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {techGroups.map((group, i) => (
-            <motion.div
+            <m.div
               key={group.label}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ export function Technologies() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

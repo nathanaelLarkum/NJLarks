@@ -3,12 +3,12 @@
 import Link from "next/link";
 import { ExternalLink, ArrowRight, Calendar, Building2 } from "lucide-react";
 import { featuredProjects } from "@/lib/data/projects";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 function ProjectCard({ project, index }: { project: typeof featuredProjects[0]; index: number }) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
@@ -63,7 +63,7 @@ function ProjectCard({ project, index }: { project: typeof featuredProjects[0]; 
           </div>
         </div>
       </a>
-    </motion.div>
+    </m.div>
   );
 }
 

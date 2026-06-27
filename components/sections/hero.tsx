@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const trustIndicators = [
   "Full Stack Engineer",
@@ -32,13 +32,13 @@ export function Hero() {
       </div>
 
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-20 right-10 md:right-24 w-64 h-64 rounded-2xl border border-accent/8 bg-dark3/10 backdrop-blur-sm rotate-12 animate-float" />
+        <div className="absolute top-20 right-10 md:right-24 w-64 h-64 rounded-2xl border border-accent/8 bg-dark3/10 rotate-12 animate-float" />
         <div className="absolute bottom-32 left-8 md:left-16 w-40 h-40 rounded-xl border border-light2/6 bg-dark2/20 rotate-[-8deg] animate-float-delayed" />
         <div className="absolute top-1/2 right-4 md:right-8 w-24 h-24 rounded-lg border border-accent/10 bg-accent/5 rotate-6 animate-float-slow" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 py-32 text-center">
-        <motion.div
+        <m.div
           custom={0}
           variants={fadeUp}
           initial="hidden"
@@ -49,9 +49,9 @@ export function Hero() {
           <span className="text-xs font-medium text-accent tracking-wider uppercase">
             Available for new projects
           </span>
-        </motion.div>
+        </m.div>
 
-        <motion.h1
+        <m.h1
           custom={1}
           variants={fadeUp}
           initial="hidden"
@@ -65,9 +65,9 @@ export function Hero() {
           <span className="text-light1">Software That Helps</span>
           <br />
           <span className="gradient-text-hero">Businesses Move Faster.</span>
-        </motion.h1>
+        </m.h1>
 
-        <motion.p
+        <m.p
           custom={2}
           variants={fadeUp}
           initial="hidden"
@@ -76,9 +76,9 @@ export function Hero() {
         >
           From affordable business websites to custom SaaS platforms, admin dashboards,
           payment systems and AI-powered tools.
-        </motion.p>
+        </m.p>
 
-        <motion.div
+        <m.div
           custom={3}
           variants={fadeUp}
           initial="hidden"
@@ -98,9 +98,9 @@ export function Hero() {
           >
             View Work
           </Link>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           custom={4}
           variants={fadeUp}
           initial="hidden"
@@ -113,7 +113,7 @@ export function Hero() {
               <span className="text-xs text-muted">{item}</span>
             </div>
           ))}
-        </motion.div>
+        </m.div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted/40">

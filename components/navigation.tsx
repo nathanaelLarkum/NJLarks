@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -95,7 +95,7 @@ export function Navigation() {
       <AnimatePresence>
         {mobileOpen && (
           <>
-            <motion.div
+            <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -103,7 +103,7 @@ export function Navigation() {
               className="fixed inset-0 z-40 bg-dark1/60 backdrop-blur-sm md:hidden"
               onClick={() => setMobileOpen(false)}
             />
-            <motion.div
+            <m.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -122,7 +122,7 @@ export function Navigation() {
 
               <nav className="flex-1 flex flex-col gap-1 p-4">
                 {navLinks.map((link, i) => (
-                  <motion.div
+                  <m.div
                     key={link.href}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -139,7 +139,7 @@ export function Navigation() {
                     >
                       {link.label}
                     </Link>
-                  </motion.div>
+                  </m.div>
                 ))}
               </nav>
 
@@ -158,7 +158,7 @@ export function Navigation() {
                   Ask a quick question
                 </Link>
               </div>
-            </motion.div>
+            </m.div>
           </>
         )}
       </AnimatePresence>

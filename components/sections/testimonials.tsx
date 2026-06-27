@@ -1,7 +1,7 @@
 "use client";
 
 import { Star } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const testimonials = [
   {
@@ -49,7 +49,7 @@ export function Testimonials() {
 
         <div className="grid sm:grid-cols-2 gap-4">
           {testimonials.map((t, i) => (
-            <motion.div
+            <m.div
               key={t.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ export function Testimonials() {
                   <p className="text-[10px] text-muted">{t.role} · {t.business}</p>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>
